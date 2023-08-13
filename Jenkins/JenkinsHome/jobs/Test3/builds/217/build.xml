@@ -1,0 +1,50 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UpstreamCause>
+            <upstreamProject>Test2</upstreamProject>
+            <upstreamUrl>job/Test2/</upstreamUrl>
+            <upstreamBuild>217</upstreamBuild>
+            <upstreamCauses>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>Test1</upstreamProject>
+                <upstreamUrl>job/Test1/</upstreamUrl>
+                <upstreamBuild>268</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.triggers.TimerTrigger_-TimerTriggerCause/>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>Test1</upstreamProject>
+                <upstreamUrl>job/Test1/</upstreamUrl>
+                <upstreamBuild>269</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.triggers.TimerTrigger_-TimerTriggerCause/>
+                  <hudson.triggers.TimerTrigger_-TimerTriggerCause reference="../hudson.triggers.TimerTrigger_-TimerTriggerCause"/>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+            </upstreamCauses>
+          </hudson.model.Cause_-UpstreamCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+  </actions>
+  <queueId>713</queueId>
+  <timestamp>1687615347626</timestamp>
+  <startTime>1687615347659</startTime>
+  <result>SUCCESS</result>
+  <duration>451</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/Test3</workspace>
+  <hudsonVersion>2.401.1</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="java.util.Collections$UnmodifiableSet">
+    <c class="sorted-set"/>
+  </culprits>
+</build>

@@ -1,0 +1,11 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/AutomatedDeploymentTest
+[AutomatedDeploymentTest] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins10705443914857806524.sh
++ date
+Sat Jun 24 21:00:46 EEST 2023
+[DeployPublisher][INFO] Attempting to deploy 1 war file(s)
+[DeployPublisher][INFO] Deploying /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/AutomatedDeploymentTest/sample.war to container Tomcat 8.x Remote with context sample.war
+  [/Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/AutomatedDeploymentTest/sample.war] is not deployed. Doing a fresh deployment.
+  Deploying [/Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/AutomatedDeploymentTest/sample.war]
+Finished: SUCCESS

@@ -1,0 +1,41 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.cli.BuildCommand_-CLICause>
+            <startedBy>anonymous</startedBy>
+          </hudson.cli.BuildCommand_-CLICause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <hudson.model.ParametersAction>
+      <safeParameters class="sorted-set"/>
+      <parameters>
+        <hudson.model.StringParameterValue>
+          <name>MESSAGE</name>
+          <value>HELLOWORLD</value>
+        </hudson.model.StringParameterValue>
+      </parameters>
+      <parameterDefinitionNames>
+        <string>MESSAGE</string>
+      </parameterDefinitionNames>
+    </hudson.model.ParametersAction>
+  </actions>
+  <queueId>881</queueId>
+  <timestamp>1687708674216</timestamp>
+  <startTime>1687708674239</startTime>
+  <result>SUCCESS</result>
+  <duration>249</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/SampleProject1</workspace>
+  <hudsonVersion>2.401.1</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="java.util.Collections$UnmodifiableSet">
+    <c class="sorted-set"/>
+  </culprits>
+</build>

@@ -1,0 +1,14 @@
+Started by upstream project "[8mha:////4EFrIdVOwB0X9B6/TSTvg4VTuoYOh0Yq3d5QwqhLadNFAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/az8JP2Q1OISI30AYxLC68AAAAA=[0mTest2" build number [8mha:////4IPy0n5mtxw+lzy+s0fnjVVd/hMiP9n0rwPZXg4d4sGUAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzmEgY+/az8JP2Q1OISI30jI2MAWHn68MMAAAA=[0m223
+originally caused by:
+ Started by upstream project "[8mha:////4OHcFMCMr0SU+ik8sTWnpz4KdLk9gHZT4Y41BPar/afcAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/az8JP2Q1OISQ30AoEHvwMAAAAA=[0mTest1" build number [8mha:////4HyFaHa7vAfNYKV3tFu+GEbdehM0JAEk7CELdnsgZxBPAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzmEgY+/az8JP2Q1OISQ30jc3MA1DNAzcMAAAA=[0m277
+ originally caused by:
+  Started by timer
+ Started by upstream project "[8mha:////4OHcFMCMr0SU+ik8sTWnpz4KdLk9gHZT4Y41BPar/afcAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/az8JP2Q1OISQ30AoEHvwMAAAAA=[0mTest1" build number [8mha:////4HvR/3GhH4wch/usyaCnaKrJNXwECEbj8IYIooAvsTlbAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzmEgY+/az8JP2Q1OISQ30jcwsARS7/XcMAAAA=[0m278
+ originally caused by:
+  Started by timer
+Running as SYSTEM
+Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/Test3
+[Test3] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins10889252220458431894.sh
++ pwd
+/Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/Test3
+Finished: SUCCESS

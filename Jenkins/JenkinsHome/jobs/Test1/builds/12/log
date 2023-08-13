@@ -1,0 +1,7 @@
+Started by remote host [0:0:0:0:0:0:0:1]
+Running as SYSTEM
+Building on the built-in node in workspace /Users/sahilbajaj/Desktop/Jenkins/JenkinsHome/workspace/Test1
+[Test1] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins15205593596991634460.sh
++ Date
+Sat Jun 17 20:28:03 EEST 2023
+Finished: SUCCESS

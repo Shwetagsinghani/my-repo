@@ -1,0 +1,41 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<build>
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UpstreamCause>
+            <upstreamProject>Test2</upstreamProject>
+            <upstreamUrl>job/Test2/</upstreamUrl>
+            <upstreamBuild>37</upstreamBuild>
+            <upstreamCauses>
+              <hudson.model.Cause_-UpstreamCause>
+                <upstreamProject>Test1</upstreamProject>
+                <upstreamUrl>job/Test1/</upstreamUrl>
+                <upstreamBuild>59</upstreamBuild>
+                <upstreamCauses>
+                  <hudson.triggers.TimerTrigger_-TimerTriggerCause/>
+                </upstreamCauses>
+              </hudson.model.Cause_-UpstreamCause>
+            </upstreamCauses>
+          </hudson.model.Cause_-UpstreamCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+  </actions>
+  <queueId>141</queueId>
+  <timestamp>1687166699606</timestamp>
+  <startTime>1687166699633</startTime>
+  <result>SUCCESS</result>
+  <duration>458</duration>
+  <charset>UTF-8</charset>
+  <keepLog>false</keepLog>
+  <builtOn></builtOn>
+  <workspace>/Users/sahilbajaj/Desktop/Jenkins/JenkinsHome/workspace/Test3</workspace>
+  <hudsonVersion>2.387.3</hudsonVersion>
+  <scm class="hudson.scm.NullChangeLogParser"/>
+  <culprits class="java.util.Collections$UnmodifiableSet">
+    <c class="sorted-set"/>
+  </culprits>
+</build>

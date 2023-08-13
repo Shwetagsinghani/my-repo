@@ -1,0 +1,14 @@
+Started by upstream project "[8mha:////4OHcFMCMr0SU+ik8sTWnpz4KdLk9gHZT4Y41BPar/afcAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/az8JP2Q1OISQ30AoEHvwMAAAAA=[0mTest1" build number [8mha:////4OuEdSrPa+1lmuQCBeKpcOO9//eDO1zdXCXPBRjlKGC6AAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzmEgY+/az8JP2Q1OISQ30jMyMAGvYxpMMAAAA=[0m262
+originally caused by:
+ Started by timer
+Started by upstream project "[8mha:////4OHcFMCMr0SU+ik8sTWnpz4KdLk9gHZT4Y41BPar/afcAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/az8JP2Q1OISQ30AoEHvwMAAAAA=[0mTest1" build number [8mha:////4M4HzpYEisjz/sczILFIHRyk4n9dmn7FTa8+aHx63O2uAAAAmh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzmEgY+/az8JP2Q1OISQ30jM2MAjMY208MAAAA=[0m263
+originally caused by:
+ Started by timer
+ Started by timer
+Running as SYSTEM
+Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/Test2
+[Test2] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins13269389985354262979.sh
++ pwd
+/Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/Test2
+Triggering a new build of [8mha:////4Ja7qRCaoFOyWchQAm0xbAB3LKnh3L73XnYw9EsXj9rsAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/az8JP2Q1OISY30AIiPZ8sAAAAA=[0mTest3
+Finished: SUCCESS

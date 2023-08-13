@@ -1,0 +1,13 @@
+Started by upstream project "[8mha:////4Kju4CImUDCGkvr3OKNCLnF/dYXFqilg+kb32xjGK2iFAAAAoh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyBEgYx/az8JP3gxNyCnFSX1IKc/Eqv/KRifQC6p4W7ywAAAA==[0mSampleDeployJobs" build number [8mha:////4EkAkficL4ANboWHsqUhW8jr6+H1bgqqd2eSxIJyN2q1AAAAoh+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBnH9rPwk/eDE3IKcVJfUgpz8Sq/8pGJ9MwAScGqHzAAAAA==[0m6
+originally caused by:
+ Started by upstream project "[8mha:////4PfluFzdIBjL0qphuEYRO1EAoGB66TH6NE1as+QyDvu2AAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAy+EgYR/az8JP3gxNyCnFSn0sycFC8gFwCmIcYpyQAAAA==[0mSampleBuildJob" build number [8mha:////4HUIwszxfsuSk8IHBZ/qgvy57XSn16PaPI/59ebaApPrAAAAnx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLQIwSBlH9rPwk/eDE3IKcVKfSzJwULyDXFACN4F5OygAAAA==[0m5
+ originally caused by:
+  Started by user unknown or anonymous
+Running as SYSTEM
+Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/SampleTestJob
+[SampleTestJob] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins11243988378445767318.sh
++ date
+Sat Jun 24 23:24:17 EEST 2023
++ echo 'Test job completed successfully'
+Test job completed successfully
+Finished: SUCCESS

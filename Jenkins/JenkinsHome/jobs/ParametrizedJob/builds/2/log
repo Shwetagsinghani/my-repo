@@ -1,0 +1,9 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/ParametrizedJob
+[ParametrizedJob] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins4136601479299464608.sh
++ echo Automation
+Automation
++ echo C
+C
+Finished: SUCCESS

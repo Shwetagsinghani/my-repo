@@ -1,0 +1,9 @@
+Started by user unknown or anonymous
+Running as SYSTEM
+Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/SampleTestJob
+[SampleTestJob] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins16749408217548426899.sh
++ date
+Sat Jun 24 22:26:53 EEST 2023
++ echo 'Test job completed successfully'
+Test job completed successfully
+Finished: SUCCESS
