@@ -1,0 +1,18 @@
+- hosts: appserver
+  remote_user: root
+  tasks:
+  - name: Installing Terraform to VM
+    shell: "cd /test_dir; wget https://releases.hashicorp.com/terraform/1.5.4/terraform_1.5.4_linux_386.zip"
+
+  - name: Unzip the Terraform Zip file
+    shell: "cd /test_dir; unzip terraform_1.5.4_linux_386.zip"
+  
+  - name: Setting envirnment variable to add the path
+    shell: "cd /test_dir; cp terraform /usr/bin"
+
+
+
+
+
+
+
