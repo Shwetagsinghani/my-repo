@@ -1,0 +1,138 @@
+description: "This template deploys a vCGNAT setup."
+heat_template_version: 2014-10-16
+parameters: 
+  CONFIG_DOMAIN:
+    description: "vCGNAT VM  instance nova config_domain."
+    label: config_domain
+    type: string
+  CONFIG_START_DEPLOY:
+    description: "vCGNAT VM  instance nova config_start_deploy."
+    label: config_start_deploy
+    type: string
+  CONFIG_TIMEZONE:
+    description: "vCGNAT VM  instance nova config_timezone."
+    label: config_timezone
+    type: string
+  vCGNAT_0_flavor_name:
+    description: "vCGNAT VM  instance nova flavor."
+    label: Flavor
+    type: string
+  vCGNAT_Mgmt_subnet_id:
+    description: "Mgmt subnet ID's assignments for vCGNAT VM on port creation"
+    type: comma_delimited_list
+  vCGNAT_IPC_internal_subnet_id:
+    description: "ipc subnet ID's assignments for vCGNAT VM on port creation"
+    type: comma_delimited_list
+  vCGNAT_central_subnet_id:
+    description: "Central subnet ID's assignments for vCGNAT VM on port creation"
+    type: comma_delimited_list
+  vCGNAT_LOG_subnet_id:
+    description: "LBO subnet ID's assignments for vCGNAT VM on port creation"
+    type: comma_delimited_list
+  vCGNAT_Mgmt_net_id:
+    description: "Neutron UUID for internal traffic."
+    label: "mgmt ipv4 network ID"
+    type: comma_delimited_list
+  vCGNAT_IPC_internal_net_id:
+    description: "Neutron UUID for management traffic."
+    label: "ipc ipv4 network ID"
+    type: comma_delimited_list
+  vCGNAT_central_net_id:
+    description: "Neutron UUID for Central traffic."
+    label: "Central ipv4 network ID"
+    type: comma_delimited_list
+  vCGNAT_LOG_net_id:
+    description: "Neutron UUID for LBO traffic."
+    label: "LBO ipv4 network ID"
+    type: comma_delimited_list
+  vCGNAT_names:
+    description: "VM Name for the resource."
+    type: comma_delimited_list
+  vCGNAT_nodenames:
+    description: "VM Node Name for the resource."
+    type: comma_delimited_list
+  vCGNAT_availability_zone_list:
+    description: "Zone of vCGNAT instances"
+    type: comma_delimited_list
+  vCGNAT_Instance_4_Vol:
+    description: "vCGNAT Bootable Volume UUID."
+    type: string
+
+resources:  
+  p1p2_net_Mgmt_606_VM4_eth0:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Mgmt_606_VM4_eth0
+      network: { get_param: [vCGNAT_Mgmt_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Mgmt_606_VM4_eth5:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Mgmt_606_VM4_eth5
+      network: {get_param: [vCGNAT_Mgmt_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p1p2_net_Sterlite_Internal_209_VM4_eth1:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Sterlite_Internal_209_VM4_eth1
+      network: {get_param: [vCGNAT_IPC_internal_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Sterlite_Internal_209_VM4_eth6:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Sterlite_Internal_209_VM4_eth6
+      network: {get_param: [vCGNAT_IPC_internal_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p1p2_net_Log_CGNAT_CGNAT_COL_211_VM4_eth4:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_LOG_604_VM4_eth4
+      network: {get_param: [vCGNAT_LOG_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Log_CGNAT_CGNAT_COL_211_VM4_eth8:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_LOG_604_VM4_eth8
+      network: {get_param: [vCGNAT_LOG_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+
+
+  vCGNAT_Instance_4:
+    properties:
+      availability_zone: {get_param: [vCGNAT_availability_zone_list,0]}
+      block_device_mapping_v2:
+        - 
+          delete_on_termination: "false"
+          device_name: vda
+          volume_id:
+            get_param:
+              - vCGNAT_Instance_4_Vol
+      flavor:
+        get_param: vCGNAT_0_flavor_name
+      name: {get_param: [vCGNAT_names,0]}
+      networks:
+        -
+         port:
+            get_resource: p1p2_net_Mgmt_606_VM4_eth0
+        -
+         port:
+           get_resource: p2p1_net_Mgmt_606_VM4_eth5
+        -
+         port:
+           get_resource: p1p2_net_Sterlite_Internal_209_VM4_eth1
+        -
+         port:
+           get_resource: p2p1_net_Sterlite_Internal_209_VM4_eth6
+        -
+         port:
+           get_resource: p1p2_net_Log_CGNAT_CGNAT_COL_211_VM4_eth4
+        -
+         port:
+           get_resource: p2p1_net_Log_CGNAT_CGNAT_COL_211_VM4_eth8
+    type: "OS::Nova::Server"

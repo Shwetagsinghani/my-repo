@@ -1,0 +1,166 @@
+description: "This template deploys a vIPDR setup."
+heat_template_version: 2014-10-16
+parameters: 
+  CONFIG_DOMAIN:
+    description: "vIPDR VM  instance nova config_domain."
+    label: config_domain
+    type: string
+  CONFIG_START_DEPLOY:
+    description: "vIPDR VM  instance nova config_start_deploy."
+    label: config_start_deploy
+    type: string
+  CONFIG_TIMEZONE:
+    description: "vIPDR VM  instance nova config_timezone."
+    label: config_timezone
+    type: string
+  Str-Correlation-Engine:
+    description: "vIPDR VM  instance nova flavor."
+    label: Flavor
+    type: string
+  Str-Ingestion-Distribution-Server:
+    description: "vIPDR VM  instance nova flavor."
+    label: Flavor
+    type: string
+  vIPDR_Mgmt_subnet_id:
+    description: "Mgmt subnet ID's assignments for vIPDR VM on port creation"
+    type: comma_delimited_list
+  vIPDR_IPC_internal_subnet_id:
+    description: "ipc subnet ID's assignments for vIPDR VM on port creation"
+    type: comma_delimited_list
+  vIPDR_central_subnet_id:
+    description: "Central subnet ID's assignments for vIPDR VM on port creation"
+    type: comma_delimited_list
+  vIPDR_Mgmt_net_id:
+    description: "Neutron UUID for internal traffic."
+    label: "mgmt ipv4 network ID"
+    type: comma_delimited_list
+  vIPDR_IPC_internal_net_id:
+    description: "Neutron UUID for management traffic."
+    label: "ipc ipv4 network ID"
+    type: comma_delimited_list
+  vIPDR_MED_RA_net_id:
+    description: "Neutron UUID for RA/Med traffic."
+    label: "RA/Med ipv4 network ID"
+    type: comma_delimited_list
+  vIPDR_MED_RA_subnet_id:
+    description: "Neutron UUID for RA/Med traffic."
+    label: "RA/Med ipv4 network ID"
+    type: comma_delimited_list
+  vIPDR_central_net_id:
+    description: "Neutron UUID for Central traffic."
+    label: "Central ipv4 network ID"
+    type: comma_delimited_list
+  vIPDR_names:
+    description: "VM Name for the resource."
+    type: comma_delimited_list
+  vIPDR_nodenames:
+    description: "VM Node Name for the resource."
+    type: comma_delimited_list
+  vIPDR_availability_zone_list:
+    description: "Zone of vIPDR instances"
+    type: comma_delimited_list
+#   Here we are using IPDR instance 1 and 2 on Numa1, same has been defined below as parameter
+#   In case of more Volumes, please define them here that can be used as Index later on.
+  vIPDR_Instance_2_Vol:
+    description: "vIPDR Bootable Volume UUID."
+    type: string
+
+resources:  
+  p1p2_net_Mgmt_606_VM2_eth0:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Mgmt_606_VM2_eth0
+      network: { get_param: [vIPDR_Mgmt_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Mgmt_606_VM2_eth7:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Mgmt_606_VM2_eth7
+      network: {get_param: [vIPDR_Mgmt_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p1p2_net_Sterlite_Internal_209_VM2_eth1:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Sterlite_Internal_209_VM2_eth1
+      network: {get_param: [vIPDR_IPC_internal_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Sterlite_Internal_209_VM2_eth8:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Sterlite_Internal_209_VM2_eth8
+      network: {get_param: [vIPDR_IPC_internal_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p1p2_net_Mediation_RA_612_VM2_eth3:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Mediation_RA_612_VM2_eth3
+      network: {get_param: [vIPDR_MED_RA_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Mediation_RA_612_VM2_eth10:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Mediation_RA_612_VM2_eth10
+      network: {get_param: [vIPDR_MED_RA_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p1p2_net_Central_613_VM2_eth4:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Central_613_VM2_eth4
+      network: {get_param: [vIPDR_central_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Central_613_VM2_eth11:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Central_613_VM2_eth11
+      network: {get_param: [vIPDR_central_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+
+
+
+  vIPDR_Instance_2:
+    properties:
+      availability_zone: {get_param: [vIPDR_availability_zone_list,0]}
+      block_device_mapping_v2:
+        - 
+          delete_on_termination: "false"
+          device_name: vda
+          volume_id:
+            get_param:
+              - vIPDR_Instance_2_Vol
+      flavor:
+        get_param: Str-Correlation-Engine
+      name: {get_param: [vIPDR_names,0]}
+      networks:
+        -
+          port:
+            get_resource: p1p2_net_Mgmt_606_VM2_eth0
+        -
+          port:
+            get_resource: p1p2_net_Sterlite_Internal_209_VM2_eth1
+        -
+          port:
+            get_resource: p1p2_net_Mediation_RA_612_VM2_eth3
+        -
+          port:
+            get_resource: p1p2_net_Central_613_VM2_eth4
+        -
+          port:
+            get_resource: p2p1_net_Mgmt_606_VM2_eth7
+        -
+          port:
+            get_resource: p2p1_net_Sterlite_Internal_209_VM2_eth8
+        -
+          port:
+            get_resource: p2p1_net_Mediation_RA_612_VM2_eth10
+        -
+          port:
+            get_resource: p2p1_net_Central_613_VM2_eth11
+    type: "OS::Nova::Server"

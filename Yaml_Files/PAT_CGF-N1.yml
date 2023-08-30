@@ -1,0 +1,226 @@
+description: "This template deploys a vCGF setup."
+heat_template_version: 2014-10-16
+parameters: 
+  CONFIG_DOMAIN:
+    description: "vCGF VM  instance nova config_domain."
+    label: config_domain
+    type: string
+  CONFIG_START_DEPLOY:
+    description: "vCGF VM  instance nova config_start_deploy."
+    label: config_start_deploy
+    type: string
+  CONFIG_TIMEZONE:
+    description: "vCGF VM  instance nova config_timezone."
+    label: config_timezone
+    type: string
+  CGF-Parsing:
+    description: "vCGF VM  instance nova flavor."
+    label: Flavor
+    type: string
+  CGF-Distribution:
+    description: "vCGF VM  instance nova flavor."
+    label: Flavor
+    type: string
+  vCGF_IPC_internal_net_id:
+    description: "Neutron UUID for management traffic."
+    label: "ipc ipv4 network ID"
+    type: comma_delimited_list
+  vCGF_names:
+    description: "VM Name for the resource."
+    type: comma_delimited_list
+  vCGF_nodenames:
+    description: "VM Node Name for the resource."
+    type: comma_delimited_list
+  vCGF_availability_zone_list:
+    description: "Zone of vCGF instances"
+    type: comma_delimited_list
+  vCGF_Mgmt_net_id:
+    description: "Neutron UUID for internal traffic."
+    label: "mgmt ipv4 network ID"
+    type: comma_delimited_list
+  vCGF_CGF-CDF-GA_net_id:
+    description: "Neutron UUID for CGF-CDF/Ga traffic."
+    label: "CGF-CDF/Ga ipv4 network ID"
+    type: comma_delimited_list
+  vCGF_MED_RA_net_id:
+    description: "Neutron UUID for RA/Med traffic."
+    label: "RA/Med ipv4 network ID"
+    type: comma_delimited_list
+  vCGF_central_net_id:
+    description: "Neutron UUID for Central traffic."
+    label: "Central ipv4 network ID"
+    type: comma_delimited_list
+  vCGF_Mgmt_subnet_id:
+    description: "Mgmt subnet ID's assignments for vCGF VM on port creation"
+    type: comma_delimited_list
+  vCGF_IPC_internal_subnet_id:
+    description: "ipc subnet ID's assignments for vCGF VM on port creation"
+    type: comma_delimited_list
+  vCGF_CGF-CDF-GA_subnet_id:
+    description: "CGF-CDF/Ga subnet ID's assignments for vCGF VM on port creation"
+    type: comma_delimited_list
+  vCGF_MED_RA_subnet_id:
+    description: "RA/MED subnet ID's assignments for vCGF VM on port creation"
+    type: comma_delimited_list
+  vCGF_central_subnet_id:
+    description: "Central subnet ID's assignments for vCGF VM on port creation"
+    type: comma_delimited_list
+  vCGF_Instance_2_Vol:
+    description: "vCGF Bootable Volume UUID."
+    type: string
+  vCGF_Instance_8_Vol:
+    description: "vCGF Bootable Volume UUID."
+    type: string
+
+resources:  
+  p1p2_net_Mgmt_606_VM2_eth0:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Mgmt_606_VM2_eth0
+      network: { get_param: [vCGF_Mgmt_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Mgmt_606_VM2_eth7:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Mgmt_606_VM2_eth7
+      network: {get_param: [vCGF_Mgmt_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p1p2_net_Sterlite_Internal_209_VM2_eth1:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Sterlite_Internal_209_VM2_eth1
+      network: {get_param: [vCGF_IPC_internal_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Sterlite_Internal_209_VM2_eth8:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Sterlite_Internal_209_VM2_eth8
+      network: {get_param: [vCGF_IPC_internal_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p1p2_net_Mgmt_606_VM8_eth0:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Mgmt_606_VM8_eth0
+      network: { get_param: [vCGF_Mgmt_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Mgmt_606_VM8_eth7:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Mgmt_606_VM8_eth7
+      network: {get_param: [vCGF_Mgmt_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p1p2_net_Sterlite_Internal_209_VM8_eth1:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Sterlite_Internal_209_VM8_eth1
+      network: {get_param: [vCGF_IPC_internal_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Sterlite_Internal_209_VM8_eth8:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Sterlite_Internal_209_VM8_eth8
+      network: {get_param: [vCGF_IPC_internal_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p1p2_net_Mediation_RA_612_VM8_eth3:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Mediation_RA_612_VM8_eth3
+      network: {get_param: [vCGF_MED_RA_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Mediation_RA_612_VM8_eth10:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Mediation_RA_612_VM8_eth10
+      network: {get_param: [vCGF_MED_RA_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p1p2_net_Central_613_VM8_eth4:
+    properties:
+      binding:vnic_type: direct
+      name: p1p2_net_Central_613_VM8_eth4
+      network: {get_param: [vCGF_central_net_id,0]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+  p2p1_net_Central_613_VM8_eth11:
+    properties:
+      binding:vnic_type: direct
+      name: p2p1_net_Central_613_VM8_eth11
+      network: {get_param: [vCGF_central_net_id,1]}
+      port_security_enabled: false
+    type: OS::Neutron::Port
+
+  vCGF_Instance_2:
+    properties:
+      availability_zone: {get_param: [vCGF_availability_zone_list,0]}
+      block_device_mapping_v2:
+        - 
+          delete_on_termination: "false"
+          device_name: vda
+          volume_id:
+            get_param:
+              - vCGF_Instance_2_Vol
+      flavor:
+        get_param: CGF-Parsing
+      name: {get_param: [vCGF_names,0]}
+      networks:
+        -
+          port:
+            get_resource: p1p2_net_Mgmt_606_VM2_eth0
+        -
+          port:
+            get_resource: p1p2_net_Sterlite_Internal_209_VM2_eth1
+        -
+          port:
+            get_resource: p2p1_net_Mgmt_606_VM2_eth7
+        -
+          port:
+            get_resource: p2p1_net_Sterlite_Internal_209_VM2_eth8
+    type: "OS::Nova::Server"
+  vCGF_Instance_8:
+    properties:
+      availability_zone: {get_param: [vCGF_availability_zone_list,1]}
+      block_device_mapping_v2:
+        - 
+          delete_on_termination: "false"
+          device_name: vda
+          volume_id:
+            get_param:
+              - vCGF_Instance_8_Vol
+      flavor:
+        get_param: CGF-Distribution
+      name: {get_param: [vCGF_names,1]}
+      networks:
+        -
+          port:
+            get_resource: p1p2_net_Mgmt_606_VM8_eth0
+        -
+          port:
+            get_resource: p1p2_net_Sterlite_Internal_209_VM8_eth1
+        -
+          port:
+            get_resource: p1p2_net_Mediation_RA_612_VM8_eth3
+        -
+          port:
+            get_resource: p1p2_net_Central_613_VM8_eth4
+        -
+          port:
+            get_resource: p2p1_net_Mgmt_606_VM8_eth7
+        -
+          port:
+            get_resource: p2p1_net_Sterlite_Internal_209_VM8_eth8
+        -
+          port:
+            get_resource: p2p1_net_Mediation_RA_612_VM8_eth10
+        -
+          port:
+            get_resource: p2p1_net_Central_613_VM8_eth11
+    type: "OS::Nova::Server"

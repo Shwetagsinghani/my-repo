@@ -1,0 +1,42 @@
+(overcloud) [stack@invibh19ptn1dirx01mv OSP_Ceph_Monitor_scripts]$ openstack volume list --all | grep -i stl | grep -i os
+| 23b88de3-ead9-476e-9bde-52143e63eedc | EPC1_STL_CGF_COLL_2_OS_Volume_from_snapshot_15_11_21 | in-use | 350 | Attached to 292256bd-8500-4a25-ae18-def8673fd55e on /dev/vda |
+| bd99d0e9-4793-4bad-8e9a-980f47f46040 | EPC1_STL_CGF-DIST_4_OS_Volume_2 | in-use | 100 | Attached to 06d01bee-3242-4c4d-b990-46908a37762b on /dev/vda |
+| 13cec881-eb3b-4154-9af0-711800a5980b | VIL_PTN_EPC1_STL_CGNAT-Coll_2_18sep21_OS_Volume | in-use | 300 | Attached to a9df74a5-49fa-41bd-8b1c-3c382137d546 on /dev/vda |
+| 99dba30b-8f27-4dfa-8def-c47d03c19a99 | EPC1_STL_CGF_Pars_1_OS_Volume | in-use | 100 | Attached to 96a82cea-1402-4a6d-bb93-54def0a066d1 on /dev/vda |
+| 97e4c534-267e-460f-ade9-eaac9430c7ed | EPC1_STL_CGF_Pars_2_OS_Volume | in-use | 100 | Attached to 455fbf01-8228-42cf-a6b4-488f188c75b6 on /dev/vda |
+| 1f1d4c6c-e31e-47fd-a9bb-f81bfda63ff1 | EPC1_STL_CGF_Pars_4_OS_Volume | in-use | 100 | Attached to 9ef48483-040e-40c5-9521-7f946df1ba9f on /dev/vda |
+| 072c1322-03fe-41e6-9009-3f95ee88487a | EPC1_STL_CGF_Pars_3_OS_Volume | in-use | 100 | Attached to 817f974a-3693-4e69-81db-86771ea1fff4 on /dev/vda |
+| 527c896d-3aa9-476f-bd27-f0b730c6aafc | EPC1_STL_CGF_Proc_4_OS_Volume | in-use | 400 | Attached to e05b3c48-6b6b-491e-96fb-3ad0d514975f on /dev/vda |
+| d0e342dd-0354-4d84-85e6-a728cf05ab9c | EPC1_STL_CGF_Proc_2_OS_Volume | in-use | 400 | Attached to 95b3b183-42f9-49c8-93d3-c7f3ec9a2656 on /dev/vda |
+| f2a00da5-2a1f-4bf6-8564-c5b8982fecb1 | EPC1_STL_CGF_Proc_1_OS_Volume | in-use | 400 | Attached to 4b10dc8f-8fb3-49df-978f-4868754b7168 on /dev/vda |
+| a8c1d55d-1a35-4116-a77b-27b897c64906 | EPC1_STL_CGF_Proc_3_OS_Volume | in-use | 400 | Attached to 749c76eb-6949-42b8-a4e8-2a4c9e8b0fb4 on /dev/vda |
+| 0f68a6cc-b962-4e0f-a04e-e5b5b13be892 | EPC1_STL_CGF-DIST_4_OS_Volume | reserved | 100 | |
+| 05b39435-6da5-4469-af2b-f3189ad5ebc3 | EPC1_STL_CGF-DIST_5_OS_Volume | in-use | 100 | Attached to 99bcab40-6a7e-401f-ad1f-b824d03fc08a on /dev/vda |
+| 7fdd1ad1-6ae4-47ed-a1d1-1018e87be9f1 | EPC1_STL_CGF-DIST_2_OS_Volume | in-use | 100 | Attached to 556902ca-b6db-4867-aebc-7276f466bdb4 on /dev/vda |
+| 7eac093f-9f32-499b-b17d-3ed198ed670c | EPC1_STL_CGF-DIST_6_OS_Volume | in-use | 100 | Attached to bb887100-6a9c-48cb-9b46-250da86f253d on /dev/vda |
+| 29453435-f417-413a-8f5d-b8023d3dd7a0 | EPC1_STL_CGF-DIST_1_OS_Volume | in-use | 100 | Attached to 6afff20a-1f2c-4d8e-9299-ce441f773042 on /dev/vda |
+| 9556e8f2-2849-4a4c-b48e-a3a830c08286 | EPC1_STL_CGF-DIST_3_OS_Volume | in-use | 100 | Attached to a4f9a641-9e3b-4231-947a-11a337c90ba5 on /dev/vda |
+| 4c6f0fee-75b2-4d28-8f30-e4433557bc80 | VIL_PTN_EPC1_STL_CGF-DB_1_OS_Volume | in-use | 250 | Attached to 844e610f-eaa9-4a86-94f5-0640f6e256ff on /dev/vda |
+| b55026e8-8186-4160-9432-11c4a547b10f | VIL_PTN_EPC1_STL_CGF-DB_2_OS_Volume | in-use | 250 | Attached to 9d4e1611-12f7-4293-a933-09b503d39c01 on /dev/vda |
+| 301c0b46-2a7f-487e-aa7e-5579fe26d864 | VIL_PTN_EPC1_STL_CGF-COLL_2_OS_Volume | available | 350 | |
+| 79e9e51d-e099-404d-83d2-8a62c31f23c2 | VIL_PTN_EPC1_STL_CGF-COLL_1_OS_Volume | in-use | 350 | Attached to 796a16bc-b88f-42bc-b067-a5a5a3a3c08a on /dev/vda |
+| 279fa174-cf15-4cba-8de0-324734577455 | VIL_PTN_EPC1_STL_CGNAT-Coll_3_OS_Volume | in-use | 300 | Attached to e2ec75f5-d77b-4f62-b1d4-b9819c855aea on /dev/vda |
+| a3bf5c0e-e7ee-42ed-a1a3-8d01c09e8d55 | VIL_PTN_EPC1_STL_CGNAT-Coll_1_OS_Volume | in-use | 300 | Attached to 8e169445-0c4d-47d0-a019-fd862234af15 on /dev/vda |
+| b1adc602-8ef0-45da-810a-51f1adac6b1e | VIL_PTN_EPC1_STL_CGNAT-Coll_4_OS_Volume | in-use | 300 | Attached to 99ed78b5-8810-4faf-ab3b-d36738b84307 on /dev/vda |
+| 97dda0f2-78a5-44f2-9916-be9504e7ba4b | VIL_PTN_EPC1_STL_CGNAT-Coll_2_OS_Volume | available | 300 | |
+
+
+
+
+
+
+stl) [stl@invibh19ptn1ospc01mv ~]$ openstack volume list | grep -i 1a639ed1-e13c-4d4f-b073-146e34ba8c2e
+| 1a639ed1-e13c-4d4f-b073-146e34ba8c2e | STL-u04-INVIBH19PTA1NATC02MV | in-use | 500 | Attached to EPC1_S-CGNAT-COLL-2B on /dev/vdd |
+(stl) [stl@invibh19ptn1ospc01mv ~]$ openstack volume list | grep -i ipdr
+| b09594cc-a0c9-4fe7-b3e8-a8064a329e1f | STL-APPLOG-INVIBH19PTA1IPCR02MV | in-use | 30 | Attached to IPDR-CE2 on /dev/vdd |
+| 40279650-7123-42a1-abcf-7eec5f2ecfc8 | STL-SWAP-INVIBH19PTA1IPCR02MV | in-use | 16 | Attached to IPDR-CE2 on /dev/vdc |
+| b9922c4c-69a4-481d-9311-9496e18689a8 | STL-backup-INVIBH19PTA1IPCR04MV | in-use | 3296 | Attached to IPDR-CE1 on /dev/vdd |
+| 5669494f-f789-4f33-aa82-a037edc8a766 | STL-backup-INVIBH19PTA1IPCR03MV | in-use | 3296 | Attached to IPDR-CE2 on /dev/vdb |
+| 9275e20d-c506-422b-8d95-f697ea14a8b0 | STL-backup-INVIBH19PTA1IPCR02MV | in-use | 3296 | Attached to IPDR-CE3 on /dev/vdd |
+| 58170a67-609d-474c-9f15-247908e19113 | STL-backup-INVIBH19PTA1IPCR01MV | in-use | 3296 | Attached to IPDR-CE4 on /dev/vdd |
+| 2e0d87f6-ccd0-4f82-bae0-b089308d6655 | VIL_PTN_EPC1_STL_IPDR_Corr-2_18sep21-Volume | in-use | 150 | Attached to IPDR-CE2 on /dev/vda
