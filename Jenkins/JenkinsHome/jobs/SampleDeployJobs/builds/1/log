@@ -1,9 +1,0 @@
-Started by user unknown or anonymous
-Running as SYSTEM
-Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/SampleDeployJobs
-[SampleDeployJobs] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins1193536865610754190.sh
-+ date
-Sat Jun 24 22:18:40 EEST 2023
-+ echo 'deploy job completed successfully'
-deploy job completed successfully
-Finished: SUCCESS

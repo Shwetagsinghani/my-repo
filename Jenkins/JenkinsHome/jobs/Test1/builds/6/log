@@ -1,7 +1,0 @@
-Started by user unknown or anonymous
-Running as SYSTEM
-Building on the built-in node in workspace /Users/sahilbajaj/Desktop/Jenkins/JenkinsHome/workspace/Test1
-[Test1] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins7970296664638529649.sh
-+ Date
-Sat Jun 17 19:59:58 EEST 2023
-Finished: SUCCESS

@@ -1,7 +1,0 @@
-Started by user unknown or anonymous
-Running as SYSTEM
-Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/SampleProject1
-[SampleProject1] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins15934053403018664760.sh
-+ echo Automation step-by-step
-Automation step-by-step
-Finished: SUCCESS

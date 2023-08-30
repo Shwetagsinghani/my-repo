@@ -1,7 +1,0 @@
-Started from command line by [8mha:////4PO9laY6utKOEZw2cmq84pZ/o7axt36iDELZNt7CAznJAAAAmx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzOEgZ+/dLi1CL9xLz8vMrc/NJiAJjzDjjEAAAA[0manonymous
-Running as SYSTEM
-Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/SampleProject1
-[SampleProject1] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins104854492997641165.sh
-+ echo Automation step-by-step
-Automation step-by-step
-Finished: SUCCESS

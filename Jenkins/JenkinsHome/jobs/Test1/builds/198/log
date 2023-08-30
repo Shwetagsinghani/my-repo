@@ -1,8 +1,0 @@
-Started by timer
-Running as SYSTEM
-Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/Test1
-[Test1] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins10195239137425940759.sh
-+ Date
-Thu Jun 22 20:39:52 EEST 2023
-Triggering a new build of [8mha:////4EFrIdVOwB0X9B6/TSTvg4VTuoYOh0Yq3d5QwqhLadNFAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAzWEgZu/az8JP2Q1OISI30AYxLC68AAAAA=[0mTest2
-Finished: SUCCESS

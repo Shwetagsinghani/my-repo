@@ -1,9 +1,0 @@
-Started by user unknown or anonymous
-Running as SYSTEM
-Building on the built-in node in workspace /Users/sahilbajaj/Documents/Jenkins/JenkinsHome/workspace/SampleBuildJob
-[SampleBuildJob] $ /bin/sh -xe /var/folders/ym/jl4mffqj52jbhqt6_8vls3h40000gn/T/jenkins15544388657815489905.sh
-+ date
-Sat Jun 24 22:18:29 EEST 2023
-+ echo 'build jobs completed successfully'
-build jobs completed successfully
-Finished: SUCCESS
