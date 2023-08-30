@@ -1,8 +1,0 @@
-- hosts: appserver
-  remote_user: root
-  tasks:
-  - name: Creating the Test Directory
-    shell: "cd /; mkdir test_dir"
-  
-  - name: Copy the script file into the test directory
-    copy: src=script.py dest=/test_dir
