@@ -1,0 +1,15 @@
+Command to check Hourly or Minute file for IPLog Parsing
+__________________________________________________________
+
+
+
+# Per Minute : IPLOG Process :
+for i in `cat /applog/APPLICATION_LOGS/IPLOGPARSING_01/logs/CrestelMediationServerLog.log | grep TPS | tr -s ' ' | cut -d ',' -f1 | rev | cut -d ' ' -f1 | rev | cut -d ':' -f1,2 | sort | uniq` ; do B=`cat /applog/APPLICATION_LOGS/IPLOGPARSING_01/logs/CrestelMediationServerLog.log | grep TPS | grep " $i" |wc -l` ; echo "$i=$B" ; done
+
+# Per Hour : IPLOG Process :
+for i in `cat /applog/APPLICATION_LOGS/IPLOGPARSING_01/logs/CrestelMediationServerLog.log | grep TPS | tr -s ' ' | cut -d ',' -f1 | rev | cut -d ' ' -f1 | rev | cut -d ':' -f1 | sort | uniq` ; do B=`cat /applog/APPLICATION_LOGS/IPLOGPARSING_01/logs/CrestelMediationServerLog.log | grep TPS | grep " $i" |wc -l` ; echo "$i=$B" ; done
+
+
+
+# Per Hour : Based on File statistics : IPLog 
+for i in `cat /applog/FILE_STATISTICS/IPLOGPARSING_0*/IPLOG_PARSING_SERVICE-000/IPLogFileStatistics | tr -s ' ' | cut -d ',' -f1 | rev | cut -d ' ' -f1 | rev | cut -d ':' -f1 | sort | uniq` ; do B=`cat /applog/FILE_STATISTICS/IPLOGPARSING_0*/IPLOG_PARSING_SERVICE-000/IPLogFileStatistics | grep " $i" |wc -l` ; echo "$i=$B" ; done 

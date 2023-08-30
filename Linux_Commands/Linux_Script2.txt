@@ -1,0 +1,99 @@
+
+Commands to Create and Update Valid Invalid Script for Standby Nodes
+________________________________________________________________________
+
+
+
+
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_01/PARSING_01
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_01/PARSING_02
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_01/PARSING_03
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_01/PARSING_04
+
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_02/PARSING_01
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_02/PARSING_02
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_02/PARSING_03
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_02/PARSING_04
+
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_03/PARSING_01
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_03/PARSING_02
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_03/PARSING_03
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_03/PARSING_04
+
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_04/PARSING_01
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_04/PARSING_02
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_04/PARSING_03
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_04/PARSING_04
+
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_05/PARSING_01
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_05/PARSING_02
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_05/PARSING_03
+mkdir -p /opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_05/PARSING_04
+
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_01/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_01/PARSING_01/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_02/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_01/PARSING_02/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_03/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_01/PARSING_03/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_04/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_01/PARSING_04/
+
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_01/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_02/PARSING_01/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_02/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_02/PARSING_02/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_03/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_02/PARSING_03/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_04/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_02/PARSING_04/
+
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_01/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_03/PARSING_01/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_02/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_03/PARSING_02/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_03/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_03/PARSING_03/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_04/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_03/PARSING_04/
+
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_01/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_04/PARSING_01/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_02/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_04/PARSING_02/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_03/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_04/PARSING_03/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_04/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_04/PARSING_04/
+
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_01/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_05/PARSING_01/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_02/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_05/PARSING_02/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_03/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_05/PARSING_03/
+sshpass -p 'crestel' scp -r /opt/crestelsetup/Script/Valid_Invalid_Script/PARSING_04/* crestel@10.2.135.40:/opt/crestelsetup/Script/Valid_Invalid_SB_Script/SB_05/PARSING_04/
+
+find SB_01/ -type f -name "*.sh" -exec sed -i 's|/u01/Netflow_collection/INPUT/|/u01/Netflow_collection/SB/SB_01/INPUT/|g' {} +
+find SB_02/ -type f -name "*.sh" -exec sed -i 's|/u01/Netflow_collection/INPUT/|/u01/Netflow_collection/SB/SB_02/INPUT/|g' {} +
+find SB_03/ -type f -name "*.sh" -exec sed -i 's|/u01/Netflow_collection/INPUT/|/u01/Netflow_collection/SB/SB_03/INPUT/|g' {} +
+find SB_04/ -type f -name "*.sh" -exec sed -i 's|/u01/Netflow_collection/INPUT/|/u01/Netflow_collection/SB/SB_04/INPUT/|g' {} +
+find SB_05/ -type f -name "*.sh" -exec sed -i 's|/u01/Netflow_collection/INPUT/|/u01/Netflow_collection/SB/SB_05/INPUT/|g' {} +
+
+find /opt/crestelsetup/Script/Valid_Invalid_SB_Script -type f
+
+# Add nohup sh and & and add it in Master_Valid_Invalid_SB_Script.sh 
+
+On Sat, Jun 17, 2023 at 10:37 AM Urvish Dholakia <urvish.dholakia@skyvera.com> wrote:
+
+# Script_Path : /opt/crestelsetup/Script/natdata_addition_container_updations_v1.0.sh
+
+
+read -p "Enter New Partition Name ( /NATDATA... ) : " NEW_PARTITION
+
+# IPLOGPARSING_01
+sed -i 's|/NATDATA...:/NATDATA... --env-file|'$NEW_PARTITION':'$NEW_PARTITION' --env-file|g' /opt/crestelsetup/docker-med-setup/7.14.2_IPLOGPARSING/IPLOGPARSING_01/mediation/start-mediation.sh
+
+# IPLOGPARSING_02
+sed -i 's|/NATDATA...:/NATDATA... --env-file|'$NEW_PARTITION':'$NEW_PARTITION' --env-file|g' /opt/crestelsetup/docker-med-setup/7.14.2_IPLOGPARSING/IPLOGPARSING_02/mediation/start-mediation.sh
+
+# IPLOGPARSING_03
+sed -i 's|/NATDATA...:/NATDATA... --env-file|'$NEW_PARTITION':'$NEW_PARTITION' --env-file|g' /opt/crestelsetup/docker-med-setup/7.14.2_IPLOGPARSING/IPLOGPARSING_03/mediation/start-mediation.sh
+
+# Verify
+A=`cat /opt/crestelsetup/docker-med-setup/7.14.2_IPLOGPARSING/IPLOGPARSING_0*/mediation/start-mediation.sh | rev | tr -s ' ' | awk -F ' ' '{print$8" "$9}' | rev | grep 'NAT'` ; echo "$A"
+
+# Service Updation:
+find /opt/crestelsetup/MOUNT_POINT_PARSING/IPLOGPARSING_0* -type f -name "iplog-parsing-service.xml" -exec sed -i 's|/NATDATA...|'$NEW_PARTITION'|g' {} +
+B=`find /opt/crestelsetup/MOUNT_POINT_PARSING/IPLOGPARSING_0* -type f -name "iplog-parsing-service.xml" -exec awk -F '[><]' '/destination-directory-path/{print$3}' {} +` ; echo "$B"
+
+sleep 5;
+
+source ~/.bashrc
+
+restart_IPLOGPARSING_01 ; restart_IPLOGPARSING_02 ; restart_IPLOGPARSING_03
+
+sleep 5;
+
+servicestatus IPLOGPARSING_01_7.14.0 8103 ; servicestatus IPLOGPARSING_02_7.14.0 8104 ; servicestatus IPLOGPARSING_03_7.14.0 8105

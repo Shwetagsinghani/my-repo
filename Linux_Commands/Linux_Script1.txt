@@ -1,0 +1,264 @@
+Commands to update service containers in Standby Nodes
+___________________________________________________________________________
+
+docker kill $(docker ps -q)
+
+restart_PARSING_01 ; restart_PARSING_02 ; restart_PARSING_03 ; restart_PARSING_04
+servicestatus PARSING_01_7.14.0 8103 ; servicestatus PARSING_02_7.14.0 8104 ; servicestatus PARSING_03_7.14.0 8105 ; servicestatus PARSING_04_7.14.0 8106
+
+restart_DISTRIBUTION_01 ; restart_DISTRIBUTION_02 ; restart_DISTRIBUTION_03 ; restart_DISTRIBUTION_04
+servicestatus DISTRIBUTION_01_7.14.0 6103 ; servicestatus DISTRIBUTION_02_7.14.0 6104 ; servicestatus DISTRIBUTION_03_7.14.0 6105 ; servicestatus DISTRIBUTION_04_7.14.0 6106
+
+restart_SB_01_PARSING_01 ; restart_SB_01_PARSING_02 ; restart_SB_01_PARSING_03 ; restart_SB_01_PARSING_04
+servicestatus SB_01_PARSING_01_7.14.0 8203 ; servicestatus SB_01_PARSING_01_7.14.0 8204 ; servicestatus SB_01_PARSING_01_7.14.0 8205 ; servicestatus SB_01_PARSING_01_7.14.0 8206
+
+restart_SB_02_PARSING_01  ; restart_SB_02_PARSING_02  ; restart_SB_02_PARSING_03  ; restart_SB_02_PARSING_04
+servicestatus SB_02_PARSING_01_7.14.0 8303 ; servicestatus SB_02_PARSING_01_7.14.0 8304 ; servicestatus SB_02_PARSING_01_7.14.0 8305 ; servicestatus SB_02_PARSING_01_7.14.0 8306
+
+restart_SB_03_PARSING_01  ; restart_SB_03_PARSING_02  ; restart_SB_03_PARSING_03  ; restart_SB_03_PARSING_04
+servicestatus SB_03_PARSING_01_7.14.0 8403 ; servicestatus SB_03_PARSING_01_7.14.0 8404 ; servicestatus SB_03_PARSING_01_7.14.0 8405 ; servicestatus SB_03_PARSING_01_7.14.0 8406
+
+restart_SB_04_PARSING_01  ; restart_SB_04_PARSING_02  ; restart_SB_04_PARSING_03  ; restart_SB_04_PARSING_04
+servicestatus SB_04_PARSING_01_7.14.0 8503 ; servicestatus SB_04_PARSING_01_7.14.0 8504 ; servicestatus SB_04_PARSING_01_7.14.0 8505 ; servicestatus SB_04_PARSING_01_7.14.0 8506
+
+restart_SB_05_PARSING_01  ; restart_SB_05_PARSING_02  ; restart_SB_05_PARSING_03  ; restart_SB_05_PARSING_04
+servicestatus SB_05_PARSING_01_7.14.0 8603 ; servicestatus SB_05_PARSING_01_7.14.0 8604 ; servicestatus SB_05_PARSING_01_7.14.0 8605 ; servicestatus SB_05_PARSING_01_7.14.0 8606
+
+restart_SB_01_DISTRIBUTION_01  ; restart_SB_01_DISTRIBUTION_02  ; restart_SB_01_DISTRIBUTION_03  ; restart_SB_01_DISTRIBUTION_04
+servicestatus SB_01_DISTRIBUTION_01_7.14.0 6203 ; servicestatus SB_01_DISTRIBUTION_02_7.14.0 6204 ; servicestatus SB_01_DISTRIBUTION_03_7.14.0 6205 ; servicestatus SB_01_DISTRIBUTION_04_7.14.0 6206
+
+
+################################################################################################
+
+# on standby server:
+
+mkdir -p /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_04
+mkdir -p /applog/FILE_STATISTICS/SB/SB_05/PARSING/PARSING_04/
+cp -r /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_01/PARSING_04/mediation/ /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_04/
+cd /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_04/mediation/
+
+sed -i "s/container_name=.*/container_name=SB_06_PARSING_04/g" docker-env.properties
+sed -i "s/first_port_range=.*/first_port_range=8606-8606/g" docker-env.properties
+sed -i "s/port_range_udp=.*/port_range_udp=8656-8656/g" docker-env.properties
+sed -i "s/second_port_range=.*/second_port_range=18606-18606/g" docker-env.properties
+sed -i "s/PORT=.*/PORT=7606/g" docker-env.properties
+sed -i "s/SERVER_MGMT_PORT=.*/SERVER_MGMT_PORT=7606/g" docker-env.properties
+sed -i "s|mount_path=.*|mount_path=/opt/crestelsetup/MOUNT_POINT_SB_PARSING/|g" docker-env.properties
+
+egrep 'container_name|first_port_range|port_range_udp|second_port_range|PORT|SERVER_MGMT_PORT|mount_path' */mediation/docker-env.properties
+
+sed -i "s/container_name=SB_/container_name=SB_03_/g" */mediation/docker-env.properties
+
+7203 8203-8203 8253-8253 18203-18203
+7204 8204-8204 8254-8254 18204-18204
+7205 8205-8205 8255-8255 18205-18205
+7206 8206-8206 8256-8256 18206-18206
+
+7303 8303-8303 8353-8353 18303-18303
+7304 8304-8304 8354-8354 18304-18304
+7305 8305-8305 8355-8355 18305-18305
+7306 8306-8306 8356-8356 18306-18306
+
+7403 8403-8403 8453-8453 18403-18403
+7404 8404-8404 8454-8454 18404-18404
+7405 8405-8405 8455-8455 18405-18405
+7406 8406-8406 8456-8456 18406-18406
+
+7503 8503-8503 8553-8553 18503-18503
+7504 8504-8504 8554-8554 18504-18504
+7505 8505-8505 8555-8555 18505-18505
+7506 8506-8506 8556-8556 18506-18506
+
+7603 8603-8603 8653-8653 18603-18603
+7604 8604-8604 8654-8654 18604-18604
+7605 8605-8605 8655-8655 18605-18605
+7606 8606-8606 8656-8656 18606-18606
+
+
+cd /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_01/mediation ; sh start-mediation.sh
+cd /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_02/mediation ; sh start-mediation.sh
+cd /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_03/mediation ; sh start-mediation.sh
+cd /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_04/mediation ; sh start-mediation.sh
+
+vi ~/.bashrc
+
+alias SB_05_PARSING_01='docker exec -it -u crestel SB_05_PARSING_01_7.14.0 bash'
+alias restart_SB_05_PARSING_01='cd /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_01/mediation/ ; sh start-mediation.sh'
+
+alias SB_05_PARSING_02='docker exec -it -u crestel SB_05_PARSING_02_7.14.0 bash'
+alias restart_SB_05_PARSING_02='cd /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_02/mediation/ ; sh start-mediation.sh'
+
+alias SB_05_PARSING_03='docker exec -it -u crestel SB_05_PARSING_03_7.14.0 bash'
+alias restart_SB_05_PARSING_03='cd /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_03/mediation/ ; sh start-mediation.sh'
+
+alias SB_05_PARSING_04='docker exec -it -u crestel SB_05_PARSING_04_7.14.0 bash'
+alias restart_SB_05_PARSING_04='cd /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_04/mediation/ ; sh start-mediation.sh'
+
+source ~/.bashrc
+
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/bin/. SB_05_PARSING_01_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/bin/
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/bin/. SB_05_PARSING_02_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/bin/
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/bin/. SB_05_PARSING_03_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/bin/
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/bin/. SB_05_PARSING_04_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/bin/
+
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/. SB_05_PARSING_01_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/config/
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/. SB_05_PARSING_02_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/config/
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/. SB_05_PARSING_03_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/config/
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/. SB_05_PARSING_04_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/config/
+
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/template/. SB_05_PARSING_01_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/template/
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/template/. SB_05_PARSING_02_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/template/
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/template/. SB_05_PARSING_03_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/template/
+docker cp /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/template/. SB_05_PARSING_04_7.14.0:/opt/crestelsetup/crestelpengine/modules/mediation/template/
+
+
+
+# on active server:
+
+su
+sterlite@password
+scp -r /opt/crestelsetup/MOUNT_POINT_PARSING/PARSING_01-7.14.0/* root@10.2.135.41:/opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/
+sterlite@password
+scp -r /opt/crestelsetup/MOUNT_POINT_PARSING/PARSING_02-7.14.0/* root@10.2.135.41:/opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/
+sterlite@password
+scp -r /opt/crestelsetup/MOUNT_POINT_PARSING/PARSING_03-7.14.0/* root@10.2.135.41:/opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/
+sterlite@password
+scp -r /opt/crestelsetup/MOUNT_POINT_PARSING/PARSING_04-7.14.0/* root@10.2.135.41:/opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/
+sterlite@password
+
+
+
+# on standby server:
+su
+sterlite@password
+chown -R crestel:crestelsetup /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/*
+chown -R crestel:crestelsetup /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/*
+chown -R crestel:crestelsetup /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/*
+chown -R crestel:crestelsetup /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/*
+exit
+
+# bin
+
+sed -i 's:10.2.135...:10.2.135.41:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:10.2.135...:10.2.135.41:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:10.2.135...:10.2.135.41:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:10.2.135...:10.2.135.41:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/bin/startServer_8*0*.sh
+
+sed -i 's:81:86:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:81:86:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:81:86:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:81:86:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/bin/startServer_8*0*.sh
+
+sed -i 's:-Xms.....m:-Xms7000m:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:-Xms.....m:-Xms7000m:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:-Xms.....m:-Xms7000m:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:-Xms.....m:-Xms7000m:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/bin/startServer_8*0*.sh
+
+sed -i 's:-Xmx.....m:-Xmx8000m:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:-Xmx.....m:-Xmx8000m:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:-Xmx.....m:-Xmx8000m:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/bin/startServer_8*0*.sh
+sed -i 's:-Xmx.....m:-Xmx8000m:g' /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/bin/startServer_8*0*.sh
+
+mv /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/bin/startServer_81*.sh /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/bin/startServer_8603.sh
+mv /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/bin/startServer_81*.sh /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/bin/startServer_8604.sh
+mv /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/bin/startServer_81*.sh /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/bin/startServer_8605.sh
+mv /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/bin/startServer_81*.sh /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/bin/startServer_8606.sh
+
+ls -ld /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_0*-7.14.0/bin/startServer_8*.sh
+
+find /opt/crestelsetup/MOUNT_POINT_PARSING/ /opt/crestelsetup/MOUNT_POINT_SB_PARSING/ -type f -name "startServer_*" | xargs cat | grep port |awk -F ' ' '{print$7","$4","$5}' | grep -v '^,,$' | sed 's/\-Xms//g' | sed 's/\-Xmx//g' | sed 's/\-Dcom.sun.management.jmxremote.port=//g' | sed 's/m//' | sed 's/m//' | sort -k 1
+
+
+# config
+
+mv /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8103 /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8603
+mv /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8104 /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8604
+mv /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8105 /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8605
+mv /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8106 /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8606
+
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8* -type f -name "parsing-service.xml" -exec sed -i 's:/INPUT/:/SB/SB_05/INPUT/:g' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8* -type f -name "parsing-service.xml" -exec sed -i 's:/INPUT/:/SB/SB_05/INPUT/:g' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8* -type f -name "parsing-service.xml" -exec sed -i 's:/INPUT/:/SB/SB_05/INPUT/:g' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8* -type f -name "parsing-service.xml" -exec sed -i 's:/INPUT/:/SB/SB_05/INPUT/:g' {} +
+
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/read-file-path/{print$3}' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/read-file-path/{print$3}' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/read-file-path/{print$3}' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/read-file-path/{print$3}' {} +
+
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/read-file-path/{print$3}' {} + | xargs mkdir -p
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/read-file-path/{print$3}' {} + | xargs mkdir -p
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/read-file-path/{print$3}' {} + | xargs mkdir -p
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/read-file-path/{print$3}' {} + | xargs mkdir -p
+
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8* -type f -name "parsing-service.xml" -exec sed -i 's:/u02/dest_PARSING_01:/u02/SB/SB_05/dest_PARSING_01:g' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8* -type f -name "parsing-service.xml" -exec sed -i 's:/u02/dest_PARSING_02:/u02/SB/SB_05/dest_PARSING_01:g' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8* -type f -name "parsing-service.xml" -exec sed -i 's:/u02/dest_PARSING_03:/u02/SB/SB_05/dest_PARSING_01:g' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8* -type f -name "parsing-service.xml" -exec sed -i 's:/u02/dest_PARSING_04:/u02/SB/SB_05/dest_PARSING_01:g' {} +
+
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/write-file-path/{print$3}' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/write-file-path/{print$3}' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/write-file-path/{print$3}' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/write-file-path/{print$3}' {} +
+
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/write-file-path/{print$3}' {} + | xargs mkdir -p
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/write-file-path/{print$3}' {} + | xargs mkdir -p
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/write-file-path/{print$3}' {} + | xargs mkdir -p
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8* -type f -name "parsing-service.xml" -exec awk -F '[><]' '/write-file-path/{print$3}' {} + | xargs mkdir -p
+
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8* -type f -name "mediation-server.xml" -exec sed -i 's:/PARSING_01:/SB_05_PARSING_01:g' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8* -type f -name "mediation-server.xml" -exec sed -i 's:/PARSING_02:/SB_05_PARSING_02:g' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8* -type f -name "mediation-server.xml" -exec sed -i 's:/PARSING_03:/SB_05_PARSING_03:g' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8* -type f -name "mediation-server.xml" -exec sed -i 's:/PARSING_04:/SB_05_PARSING_04:g' {} +
+
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8* -type f -name "mediation-server.xml" -exec awk -F '[><]' '/file-statistics-path/{print$3}' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8* -type f -name "mediation-server.xml" -exec awk -F '[><]' '/file-statistics-path/{print$3}' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8* -type f -name "mediation-server.xml" -exec awk -F '[><]' '/file-statistics-path/{print$3}' {} +
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8* -type f -name "mediation-server.xml" -exec awk -F '[><]' '/file-statistics-path/{print$3}' {} +
+
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_01-7.14.0/config/8* -type f -name "mediation-server.xml" -exec awk -F '[><]' '/file-statistics-path/{print$3}' {} + | xargs mkdir -p
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_02-7.14.0/config/8* -type f -name "mediation-server.xml" -exec awk -F '[><]' '/file-statistics-path/{print$3}' {} + | xargs mkdir -p
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_03-7.14.0/config/8* -type f -name "mediation-server.xml" -exec awk -F '[><]' '/file-statistics-path/{print$3}' {} + | xargs mkdir -p
+find /opt/crestelsetup/MOUNT_POINT_SB_PARSING/SB_05_PARSING_04-7.14.0/config/8* -type f -name "mediation-server.xml" -exec awk -F '[><]' '/file-statistics-path/{print$3}' {} + | xargs mkdir -p
+
+
+# restarting the service
+
+restart_SB_01_PARSING_01 ; restart_SB_01_PARSING_02 ; restart_SB_01_PARSING_03 ; restart_SB_01_PARSING_04
+servicestatus SB_01_PARSING_01_7.14.0 8203 ; servicestatus SB_01_PARSING_02_7.14.0 8204 ; servicestatus SB_04_PARSING_03_7.14.0 8505 ; servicestatus SB_04_PARSING_04_7.14.0 8206
+
+restart_SB_02_PARSING_01 ; restart_SB_02_PARSING_02 ; restart_SB_02_PARSING_03 ; restart_SB_02_PARSING_04
+servicestatus SB_02_PARSING_01_7.14.0 8303 ; servicestatus SB_02_PARSING_02_7.14.0 8304 ; servicestatus SB_04_PARSING_03_7.14.0 8505 ; servicestatus SB_04_PARSING_04_7.14.0 8306
+
+restart_SB_03_PARSING_01 ; restart_SB_03_PARSING_02 ; restart_SB_03_PARSING_03 ; restart_SB_03_PARSING_04
+servicestatus SB_03_PARSING_01_7.14.0 8403 ; servicestatus SB_03_PARSING_02_7.14.0 8404 ; servicestatus SB_04_PARSING_03_7.14.0 8505 ; servicestatus SB_04_PARSING_04_7.14.0 8406
+
+restart_SB_04_PARSING_01 ; restart_SB_04_PARSING_02 ; restart_SB_04_PARSING_03 ; restart_SB_04_PARSING_04
+servicestatus SB_04_PARSING_01_7.14.0 8503 ; servicestatus SB_04_PARSING_02_7.14.0 8504 ; servicestatus SB_04_PARSING_03_7.14.0 8505 ; servicestatus SB_04_PARSING_04_7.14.0 8506
+
+restart_SB_05_PARSING_01 ; restart_SB_05_PARSING_02 ; restart_SB_05_PARSING_03 ; restart_SB_05_PARSING_04
+servicestatus SB_05_PARSING_01_7.14.0 8603 ; servicestatus SB_05_PARSING_02_7.14.0 8604 ; servicestatus SB_04_PARSING_03_7.14.0 8605 ; servicestatus SB_04_PARSING_04_7.14.0 8606
+
+restart_PARSING_01 ; restart_PARSING_02 ; restart_PARSING_03 ; restart_PARSING_04
+servicestatus PARSING_01_7.14.0 8103 ; servicestatus PARSING_02_7.14.0 8104 ; servicestatus PARSING_03_7.14.0 8105 ; servicestatus PARSING_04_7.14.0 8106
+
+restart_DISTRIBUTION_01 ; restart_DISTRIBUTION_02 ; restart_DISTRIBUTION_03 ; restart_DISTRIBUTION_04
+servicestatus DISTRIBUTION_01_7.14.0 6103 ; servicestatus DISTRIBUTION_01_7.14.0 6104 ; servicestatus DISTRIBUTION_01_7.14.0 6105 ; servicestatus DISTRIBUTION_01_7.14.0 6106
+
+On Thu, Jun 15, 2023 at 3:18 PM Urvish Dholakia <urvish.dholakia@skyvera.com> wrote:
+mkdir -p /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_04
+mkdir -p /applog/FILE_STATISTICS/SB/SB_05/PARSING/PARSING_04/
+
+cp -r /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_01/PARSING_04/mediation/ /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_04/
+
+cd /opt/crestelsetup/docker-med-setup/7.14.2_PARSING/SB/SB_05/PARSING_04/mediation/
+
+sed -i "s/container_name=.*/container_name=SB_06_PARSING_04/g" docker-env.properties
+sed -i "s/first_port_range=.*/first_port_range=8606-8606/g" docker-env.properties
+sed -i "s/port_range_udp=.*/port_range_udp=8656-8656/g" docker-env.properties
+sed -i "s/second_port_range=.*/second_port_range=18606-18606/g" docker-env.properties
+sed -i "s/PORT=.*/PORT=7606/g" docker-env.properties
+sed -i "s/SERVER_MGMT_PORT=.*/SERVER_MGMT_PORT=7606/g" docker-env.properties
+sed -i "s|mount_path=.*|mount_path=/opt/crestelsetup/MOUNT_POINT_SB_PARSING/|g" docker-env.properties
+
+egrep 'container_name|first_port_range|port_range_udp|second_port_range|PORT|SERVER_MGMT_PORT|mount_path' */mediation/docker-env.properties
